@@ -1,7 +1,7 @@
 """FastAPI 앱 (강사 제공). 세션 4에서 쿠폰 API를 이 파일에 추가합니다.
 
 실행: uvicorn app.main:app --reload
-흐름: 화면/요청 -> 입력 검사(schemas) -> AI 점수(predict) -> 규칙(thermo) -> 응답
+흐름: 화면/요청 -> 입력 검사(schemas) -> AI 점수(predict) -> 규칙(thermo, coupon) -> 응답
 """
 
 from collections.abc import Callable
@@ -11,9 +11,14 @@ from fastapi import Depends, FastAPI, HTTPException, Request
 from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 
-from app import thermo
+from app import coupon, thermo
 from app.deps import get_predict
-from app.schemas import AnalyzeRequest, AnalyzeResponse
+from app.schemas import (
+    AnalyzeRequest,
+    AnalyzeResponse,
+    CouponIssueRequest,
+    CouponIssueResponse,
+)
 
 app = FastAPI(title="리뷰 온도계 API", version="1.0.0")
 
@@ -51,6 +56,17 @@ def analyze(req: AnalyzeRequest, predict: Predict = Depends(get_predict)) -> Ana
         temperature=thermo.to_temperature(score),
         mismatch=thermo.is_mismatch(req.rating, label),
     )
+
+
+@app.post("/v1/coupons/issue", response_model=CouponIssueResponse)
+def issue_coupon(
+    req: CouponIssueRequest,
+    predict: Predict = Depends(get_predict),
+) -> CouponIssueResponse:
+    """2차: 쿠폰 발급 (리뷰 점수 분석 후 규칙에 따라 발급)."""
+    score = round(get_score(predict, req.text), 4)
+    result = coupon.issue_coupon(req.review_id, req.text, score)
+    return CouponIssueResponse(**result)
 
 
 # 화면(static/)은 마지막에 "/" 로 연결해야 위의 API 경로가 먼저 잡힌다.

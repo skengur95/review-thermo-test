@@ -19,6 +19,13 @@ def test_analyze_ok(make_client):
     assert r.json() == {"label": "positive", "score": 0.8732, "temperature": 87.3, "mismatch": False}
 
 
+def test_analyze_neutral(make_client):
+    """점수 0.52, 별점 3 -> 중립 / 52.0℃ / 불일치 아님."""
+    r = make_client(0.52).post("/v1/reviews/analyze", json={"text": "무난해요", "rating": 3})
+    assert r.status_code == 200
+    assert r.json() == {"label": "neutral", "score": 0.52, "temperature": 52.0, "mismatch": False}
+
+
 def test_analyze_mismatch(make_client):
     """점수 0.2인데 별점 5 -> mismatch 가 true."""
     r = make_client(0.2).post("/v1/reviews/analyze", json={"text": "배송 최악", "rating": 5})
