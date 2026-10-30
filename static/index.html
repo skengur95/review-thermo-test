@@ -1,0 +1,60 @@
+<!doctype html>
+<!-- © 2026 김연지. All rights reserved. 수강생 개인 학습용 · 무단 강의·복제·배포·수정 금지 (LICENSE.md) -->
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>하루마켓 리뷰 온도계</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <h1>하루마켓 <span>리뷰 온도계</span></h1>
+    <span id="status-pill" class="pill pill-wait" role="status" aria-live="polite">API 대기 중</span>
+  </div>
+</header>
+
+<main class="wrap layout">
+  <div class="main-col">
+    <section class="card" aria-labelledby="h-form">
+      <h2 id="h-form">리뷰 분석</h2>
+      <form id="form" novalidate>
+        <label for="text">리뷰 내용</label>
+        <textarea id="text" rows="4" placeholder="예) 배송도 빠르고 품질도 좋아요"></textarea>
+        <div class="counter-row"><span id="count" class="counter" aria-live="polite">0 / 500</span></div>
+
+        <span class="label" id="rating-label">별점</span>
+        <div id="stars" class="star-pick" role="radiogroup" aria-labelledby="rating-label"></div>
+
+        <div class="row-end">
+          <button type="submit" class="btn primary" id="analyze-btn">분석</button>
+        </div>
+      </form>
+      <div id="error" class="error" role="alert" hidden></div>
+    </section>
+
+    <section class="card" id="result-card" aria-labelledby="h-result" hidden>
+      <h2 id="h-result">분석 결과</h2>
+      <div id="result"></div>
+      <div id="analyze-raw"></div>
+      <div class="coupon-area">
+        <button type="button" class="btn" id="coupon-btn">쿠폰 발급</button>
+        <div id="coupon-result" aria-live="polite"></div>
+      </div>
+      <div id="coupon-raw"></div>
+    </section>
+  </div>
+
+  <aside class="card side" aria-labelledby="h-samples">
+    <h2 id="h-samples">샘플 리뷰</h2>
+    <p class="hint">눌러서 리뷰와 별점을 채우세요.</p>
+    <div id="samples">불러오는 중…</div>
+  </aside>
+</main>
+
+<footer class="foot"><div class="wrap">하루마켓은 수업용 가상 쇼핑몰입니다.</div></footer>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+# 세션 3: 이 파일을 .github/workflows/ci.yml 로 복사합니다.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: 패키지 설치
+        run: pip install -r requirements.txt
+      - name: 테스트
+        run: pytest -v

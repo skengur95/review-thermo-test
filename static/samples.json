@@ -1,0 +1,203 @@
+{
+  "notes": "하루마켓은 수업용 가상 쇼핑몰이며 모든 리뷰는 창작입니다. expected_label은 출제자의 사람 판단(positive/negative)으로, 세션 4에서 모델 정확도를 세는 기준입니다. 반어법(참 빨리도 오네요), 별점-내용 불일치(5점 불만, 1점 칭찬), 이모지, 30자 이상(감사 쿠폰 후보) 리뷰가 섞여 있습니다. 개인정보 마스킹 자율학습용: P-3003의 r10에만 가짜 전화번호(010-0000-0000)가 들어 있습니다.",
+  "products": [
+    {
+      "product_id": "P-1001",
+      "name": "무선 이어폰",
+      "reviews": [
+        {
+          "review_id": "r1",
+          "rating": 5,
+          "text": "음질이 깨끗하고 연결도 빨라요. 출퇴근길이 즐거워졌습니다.",
+          "expected_label": "positive"
+        },
+        {
+          "review_id": "r2",
+          "rating": 1,
+          "text": "한쪽 이어폰이 일주일 만에 먹통이 됐어요. 불량품 받았습니다.",
+          "expected_label": "negative"
+        },
+        {
+          "review_id": "r3",
+          "rating": 2,
+          "text": "참 빨리도 오네요 2주 만에. 배송 속도 정말 대단하십니다.",
+          "expected_label": "negative"
+        },
+        {
+          "review_id": "r4",
+          "rating": 5,
+          "text": "소리는 좋은데 배송이 너무 늦어서 화가 납니다. 별 하나 줄 걸 그랬어요.",
+          "expected_label": "negative"
+        },
+        {
+          "review_id": "r5",
+          "rating": 1,
+          "text": "별점 잘못 눌렀어요! 정말 만족합니다. 5점 드려야 하는데 죄송해요.",
+          "expected_label": "positive"
+        },
+        {
+          "review_id": "r6",
+          "rating": 3,
+          "text": "가격 생각하면 무난해요. 노이즈 캔슬링은 약한 편이지만 쓸 만합니다.",
+          "expected_label": "positive"
+        },
+        {
+          "review_id": "r7",
+          "rating": 4,
+          "text": "👍 가볍고 착용감 좋아요! 배터리도 오래 가네요",
+          "expected_label": "positive"
+        },
+        {
+          "review_id": "r8",
+          "rating": 2,
+          "text": "케이스 뚜껑이 헐렁해서 자꾸 열려요. 마감이 아쉽습니다.",
+          "expected_label": "negative"
+        },
+        {
+          "review_id": "r9",
+          "rating": 5,
+          "text": "처음에는 반신반의했는데 통화 품질도 좋고 케이스 충전도 빨라서 매일 쓰고 있습니다. 가족 선물로 한 쌍 더 주문했어요.",
+          "expected_label": "positive"
+        },
+        {
+          "review_id": "r10",
+          "rating": 1,
+          "text": "연결이 자꾸 끊깁니다. 환불 요청했는데 답변도 없네요.",
+          "expected_label": "negative"
+        }
+      ]
+    },
+    {
+      "product_id": "P-2002",
+      "name": "니트 가디건",
+      "reviews": [
+        {
+          "review_id": "r1",
+          "rating": 5,
+          "text": "색감이 사진 그대로예요. 보들보들하고 따뜻합니다.",
+          "expected_label": "positive"
+        },
+        {
+          "review_id": "r2",
+          "rating": 2,
+          "text": "사이즈가 너무 작아요. 정사이즈로 샀는데 팔이 짧습니다.",
+          "expected_label": "negative"
+        },
+        {
+          "review_id": "r3",
+          "rating": 1,
+          "text": "세탁 한 번 했는데 보풀이 잔뜩 일어났어요. 실망입니다.",
+          "expected_label": "negative"
+        },
+        {
+          "review_id": "r4",
+          "rating": 5,
+          "text": "배송은 빨랐지만 단추가 첫날부터 떨어졌어요. 별점은 배송 보고 줬습니다.",
+          "expected_label": "negative"
+        },
+        {
+          "review_id": "r5",
+          "rating": 4,
+          "text": "가격 대비 괜찮아요. 두께감이 적당해서 가을에 입기 좋아요.",
+          "expected_label": "positive"
+        },
+        {
+          "review_id": "r6",
+          "rating": 3,
+          "text": "생각보다 얇네요. 그래도 색은 예뻐서 그냥 입으려고요.",
+          "expected_label": "positive"
+        },
+        {
+          "review_id": "r7",
+          "rating": 1,
+          "text": "와 진짜 최고예요, 한 번 입고 실밥이 다 풀렸네요. 대단한 품질이십니다.",
+          "expected_label": "negative"
+        },
+        {
+          "review_id": "r8",
+          "rating": 5,
+          "text": "어머니 생신 선물로 드렸는데 너무 좋아하세요. 촉감이 부드럽고 무겁지 않아서 하루 종일 입으셔도 편하다고 하십니다. 재구매 의사 있어요.",
+          "expected_label": "positive"
+        },
+        {
+          "review_id": "r9",
+          "rating": 2,
+          "text": "사이즈 표가 실제와 달라요. 교환 신청했는데 왕복 배송비를 내라고 하네요.",
+          "expected_label": "negative"
+        },
+        {
+          "review_id": "r10",
+          "rating": 1,
+          "text": "별점이 틀렸네요 죄송합니다. 따뜻하고 예뻐서 아주 만족해요!",
+          "expected_label": "positive"
+        }
+      ]
+    },
+    {
+      "product_id": "P-3003",
+      "name": "캠핑 의자",
+      "reviews": [
+        {
+          "review_id": "r1",
+          "rating": 5,
+          "text": "접고 펴기 쉬워서 혼자서도 금방 세팅해요. 튼튼합니다.",
+          "expected_label": "positive"
+        },
+        {
+          "review_id": "r2",
+          "rating": 1,
+          "text": "다리 이음새가 부러졌어요. 앉자마자 주저앉아서 다칠 뻔했습니다.",
+          "expected_label": "negative"
+        },
+        {
+          "review_id": "r3",
+          "rating": 2,
+          "text": "참 빨리도 오네요, 주문하고 보름 만에 받았습니다. 캠핑 시즌 다 지났어요.",
+          "expected_label": "negative"
+        },
+        {
+          "review_id": "r4",
+          "rating": 4,
+          "text": "무게가 가벼워서 들고 다니기 편해요. 수납 가방도 튼튼합니다.",
+          "expected_label": "positive"
+        },
+        {
+          "review_id": "r5",
+          "rating": 5,
+          "text": "배송 지연에 포장 파손까지, 의자 팔걸이에 흠집이 났네요. 다시는 안 살래요.",
+          "expected_label": "negative"
+        },
+        {
+          "review_id": "r6",
+          "rating": 3,
+          "text": "앉으면 편한데 접을 때 손가락이 낄 것 같아 조심해야 해요.",
+          "expected_label": "negative"
+        },
+        {
+          "review_id": "r7",
+          "rating": 5,
+          "text": "가족 캠핑에 네 개 샀는데 모두 만족합니다. 등받이 각도가 편안하고 컵홀더도 쓸모 있어요. 가격 대비 정말 훌륭하다고 생각합니다.",
+          "expected_label": "positive"
+        },
+        {
+          "review_id": "r8",
+          "rating": 1,
+          "text": "너무 만족스러워서 놀랐어요! 별점 잘못 눌러 1점이 됐네요. 5점 드립니다.",
+          "expected_label": "positive"
+        },
+        {
+          "review_id": "r9",
+          "rating": 2,
+          "text": "사이즈가 사진보다 훨씬 작아요. 성인이 앉기엔 좁습니다.",
+          "expected_label": "negative"
+        },
+        {
+          "review_id": "r10",
+          "rating": 3,
+          "text": "반품 문의드렸는데 연락이 없어요. 010-0000-0000 으로 전화 부탁드립니다.",
+          "expected_label": "negative"
+        }
+      ]
+    }
+  ]
+}
